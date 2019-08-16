@@ -1,0 +1,8 @@
+.CardList-Container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background: deepskyblue;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

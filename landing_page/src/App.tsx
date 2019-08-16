@@ -1,42 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import "./styles/App.css";
+import { NavBar } from "./components/NavBar";
 import { Hero } from "./components/Hero";
 import { CardList } from "./components/CardList";
-import clock from "./images/clock.png";
-import computer from "./images/computer.png";
-import weigths from "./images/weights.png";
+import { cards } from "./lib/cardData";
 
-const cards = [
-  {
-    id: 1,
-    image: clock,
-    tagLine: "TRAIN AT YOUR OWN TIME",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."
-  },
-  {
-    id: 2,
-    image: computer,
-    tagLine: "TRAINING EBOOKS & VIDEOS",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."
-  },
-  {
-    id: 3,
-    image: weigths,
-    tagLine: "RESISTANCE TRAINING",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+interface IState {
+  selectedOption: string;
+}
+class App extends Component<{}, IState> {
+  state: IState = {
+    selectedOption: ""
+  };
+
+  handleOptionChange = (changeEvent: any) => {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <NavBar
+          selectedOption={this.state.selectedOption}
+          handleOptionChange={this.handleOptionChange}
+        />
+        <Hero selectedOption={this.state.selectedOption} />
+        <CardList cards={cards} />
+      </div>
+    );
   }
-];
-
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Hero />
-      <CardList cards={cards} />
-    </div>
-  );
-};
+}
 
 export default App;

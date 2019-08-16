@@ -1,0 +1,38 @@
+.Hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.Hero-content-container {
+  margin-top: 100px;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+.company-name {
+  font-family: "Lato", sans-serif;
+}
+
+.tag-line {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Roboto Slab", serif;
+}
+
+.cta {
+  font-family: "Lato", sans-serif;
+}
+
+.CtaButton {
+  background-color: rgb(204, 24, 204);
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 1.15em;
+  border: none;
+}
